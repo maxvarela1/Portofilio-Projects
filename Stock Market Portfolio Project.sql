@@ -71,3 +71,5 @@ select*
     
 Select distinct `Stock Index`
 	from dataprojectsql.stocks_monthly_data;
+
+SET SQL_SAFE_UPDATES = 1;
