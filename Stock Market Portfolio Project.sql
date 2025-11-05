@@ -48,7 +48,7 @@ select*
 -- Prepare data for visualization and analysis
 
 Create or Replace View dataprojectsql.stocks_monthly_data as 
-With daily_change as (Select `date`, `Stock Index`, `Daily low`, `Daily high`, `Close price`, `Open Price`,
+With daily_change as (Select `date`, `Stock Index`, `Daily low`, `Daily high`, `Close price`,
 ((`Close Price`- lag(`Close Price`) over (partition by `index` order by date))
 /nullif(Lag(`Close Price`) over (partition by `index` order by date),0))*100 as daily_return,
 (`Daily High` - `daily low`)/nullif(`close price`,0)*100 as percentage_range
